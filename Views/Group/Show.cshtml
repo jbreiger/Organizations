@@ -1,0 +1,14 @@
+<h1> @ViewBag.group.name </h1>
+
+<h3> @ViewBag.group.description </h3>
+
+
+
+<h3> Members are  </h3>
+
+
+@foreach(var group in @ViewBag.members.groups){
+    @group.user
+}
+
+<!--Need to be able to list the users somehow. right now not showing any users

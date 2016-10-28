@@ -1,0 +1,33 @@
+@using beltReviewer.Models
+@model beltReviewer.Models.User
+ 
+ <h3> Register </h3>
+ <form asp-controller="User" asp-action="Register" method="post">
+    
+    <label asp-for="first_name"> First Name</label>
+    <input asp-for="first_name"/>
+    <span asp-validation-for="first_name"> </span>
+   
+    <label asp-for="last_name"> Last Name</label>
+    <input asp-for="last_name"/> 
+     <span asp-validation-for="last_name"></span>
+     
+    <label asp-for="email"> Email</label>
+    <input asp-for="email"/>
+    <span asp-validation-for="email"> </span>
+    
+    <label asp-for="password"> Password</label>
+    <input asp-for="password" type= "password"/>
+    <span asp-validation-for="password"> </span>
+    <br>
+    <button type="submit">Create new User</button>
+</form>
+
+@TempData["incorrect_login"]
+<form asp-controller="User" asp-action="Login" method="post">
+    <label asp-for="email"> Email</label>
+    <input asp-for="email"/>
+    <label asp-for="password"> Password</label>
+    <input asp-for="password" type="password">
+    <button type="submit">Login</button>
+</form>
